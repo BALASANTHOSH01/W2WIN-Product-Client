@@ -43,7 +43,7 @@ const About = () => {
             frameBorder="0"
             style={{ border: 0 }}
             aria-hidden="false"
-            tabIndex="0"
+            tabIndex=0
             className="rounded-lg"
           ></iframe>
         </div>

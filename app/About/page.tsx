@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Furniture from '@/assets/ProductList/TableImg.jpg';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-blue-100 to-purple-200 py-12">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
@@ -15,7 +15,7 @@ const About = () => {
               className="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="w-full  bg-white p-6 lg:my-[2%] lg:mt-[5%] lg:p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+          <div className="w-full bg-white p-6 lg:my-[2%] lg:mt-[5%] lg:p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
             <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">About Us</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Welcome to our furniture company located in the heart of Coimbatore. We specialize in providing high-quality furniture that blends style with comfort. Our showroom is located at:
@@ -43,7 +43,7 @@ const About = () => {
             frameBorder="0"
             style={{ border: 0 }}
             aria-hidden="false"
-            tabIndex=0
+            tabIndex={0}
             className="rounded-lg"
           ></iframe>
         </div>

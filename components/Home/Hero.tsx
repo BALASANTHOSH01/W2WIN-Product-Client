@@ -19,12 +19,12 @@ const Hero = () => {
         >
             <div className="absolute inset-0 bg-black opacity-30"></div>
 
-            <div className="flex flex-col gap-2 text-white items-center mt-[3%] relative z-10">
-                <div className="text-[80px] md:text-[40px] font-sans font-medium text-center">
+            <div className="flex flex-col  gap-2 text-white items-center mt-[3%] relative z-10">
+                <div className="text-[80px] md:text-[45px] font-sans font-medium text-center">
                     <p>You buy a house,</p>
                     <p>we make it home.</p>
                 </div>
-                <p className="my-[2%] font-medium text-center">Design and furniture are not just what it looks like and feels like; it is how it works.</p>
+                <p className="my-[2%] font-medium  md:text-[22px] text-center">Design and furniture are not just what it looks like and feels like; it is how it works.</p>
                 <div className="flex flex-row items-center gap-2 text-[25px] md:text-[20px] backdrop-blur-lg w-[150px] bg-white text-black justify-center rounded-[25px] cursor-pointer p-[1%] hover:shadow-2xl">
                     <p>Explore</p>
                     <ExploreArrowIcon />

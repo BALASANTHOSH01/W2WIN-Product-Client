@@ -16,7 +16,7 @@ const NavItem = ({ text, className = '', to, isMobileNav = false }: NavItemPropT
       <a
         className={`${
           isMobileNav
-            ? 'hover:bg-gray-100 hover:text-woodColor py-[3%] text-center flex flex-col justify-center items-start w-full h-[15vh] px-[15%] cursor-pointer font-medium text-[15px]'
+            ? 'hover:bg-gray-100 hover:text-woodColor py-[1%] text-center flex flex-col justify-center items-start w-full h-[15vh] px-[15%] cursor-pointer font-medium text-[20px]'
             : 'px-[2%] py-[1%] cursor-pointer font-medium text-[15px]'
         } ${className}`}
       >

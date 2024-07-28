@@ -8,7 +8,7 @@ const MobileNav = ({ handleMobileNav }: { handleMobileNav: () => void }) => {
       <div className='h-[10vh] py-[3%] mt-[6%] relative w-[100%]'>
         <CrossIcon onClick={handleMobileNav} className='cursor-pointer text-[30px] absolute right-[15%] bg-gray-100 text-woodColor rounded-full p-1' />
       </div>
-      <div className='flex flex-col h-[60vh] items-center w-full py-[2%]'>
+      <div className='flex flex-col h-[60vh] items-center mt-[10%] w-full py-[2%]'>
         <NavItem isMobileNav={true} text='Home' to='/' />
         <NavItem isMobileNav={true} text='Products' to='/' />
         <NavItem isMobileNav={true} text='About' to='/About' />

@@ -8,8 +8,8 @@ import { BsStarFill as StarIcon } from 'react-icons/bs';
 const ProductList: React.FC = () => {
   return (
     <div className="py-[3%]">
-      <p className="text-[45px] md:text-[30px] text-center my-[3%]">Top Sale Products</p>
-      <div className="grid grid-cols-3 px-[4%]">
+      <p className="text-[45px] md:text-[30px] text-center my-[5%]">Top Sale Products</p>
+      <div className="grid grid-cols-3 md:grid-cols-2 px-[4%]">
         {ProductData.map((data) => (
           <Link
             href={`/Product/${data.name}`}

@@ -3,6 +3,7 @@
 import React from 'react';
 import { HouseInteriorTwo } from '@/assets/Hero/index';
 import { ExploreArrowIcon } from '../ReusableComponent/Icons';
+import Link from 'next/link';
 
 const Hero = () => {
     return (
@@ -25,10 +26,10 @@ const Hero = () => {
                     <p>we make it home.</p>
                 </div>
                 <p className="my-[2%] font-medium  md:text-[22px] text-center">Design and furniture are not just what it looks like and feels like; it is how it works.</p>
-                <div className="flex flex-row items-center gap-2 text-[25px] md:text-[20px] backdrop-blur-lg w-[150px] bg-white text-black justify-center rounded-[25px] cursor-pointer p-[1%] hover:shadow-2xl">
+                <Link href={"/Products"} className="flex flex-row items-center gap-2 text-[25px] md:text-[20px] backdrop-blur-lg w-[150px] bg-white text-black justify-center rounded-[25px] cursor-pointer p-[1%] hover:shadow-2xl">
                     <p>Explore</p>
                     <ExploreArrowIcon />
-                </div>
+                </Link>
             </div>
 
         </div>

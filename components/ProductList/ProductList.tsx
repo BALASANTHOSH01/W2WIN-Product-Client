@@ -34,7 +34,7 @@ const ProductList: React.FC = () => {
                 <p className=' text-gray-500 text-[14px]'>{data.category}</p>
                 <h3 className="text-lg font-semibold mb-2">{data.name}</h3>
                 <div className=" bottom-2 space-x-2 w-full flex flex-row items-center justify-between  text-[13px]">
-                  <button className="bg-black text-white py-[6px] px-4 rounded-full flex items-center space-x-2 w-[50%] lg:w-[100%] justify-between backdrop-blur-3xl backdrop-opacity-60">
+                  <button className="bg-black text-white py-[6px] px-4 rounded-full flex items-center space-x-2 w-[70%] lg:w-[100%] justify-between backdrop-blur-3xl backdrop-opacity-60">
                     <span className=''>Buy now</span>
                     <div className='bg-white rounded-full p-1 text-black'>
                       <RightArrowIcon />

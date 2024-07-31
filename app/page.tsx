@@ -10,16 +10,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
-      <NavBar/>
-      <Hero/>
+      <NavBar />
+      <Hero />
 
       <div className="py-6">
-      <p className="text-3xl md:text-2xl text-center mb-12">Top Sale Products</p>
-      <ProductList/>
-      <ProductList/>
+        <p className="text-3xl md:text-2xl text-center mb-12">Top Sale Products</p>
+        <ProductList />
+        <ProductList />
       </div>
       {/* <Bento/> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

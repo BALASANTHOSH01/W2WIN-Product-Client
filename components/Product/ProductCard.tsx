@@ -1,7 +1,7 @@
 // components/ProductCard.tsx
 import React from 'react';
 import Image from 'next/image';
-import { Product } from '../types';
+import { Product } from '../../types/types';
 
 type ProductCardProps = {
   product: Product;

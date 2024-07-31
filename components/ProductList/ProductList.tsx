@@ -2,37 +2,45 @@
 
 import Image from 'next/image';
 import Link from "next/link";
-import ProductData from './ProductData';
 import { BsStarFill as StarIcon } from 'react-icons/bs';
+import ProductData from './ProductData';
+import { CardIcon, RightArrowIcon } from '../ReusableComponent/Icons';
+
 
 const ProductList: React.FC = () => {
   return (
-    <div className="py-[3%]">
-      <p className="text-[45px] md:text-[30px] text-center my-[5%]">Top Sale Products</p>
-      <div className="grid grid-cols-3 md:grid-cols-2 px-[4%]">
+    <div className="py-6">
+     
+      <div className="grid grid-cols-3 mx-auto lg:grid-cols-2  2xl:grid-cols-3 gap-4 px-5">
         {ProductData.map((data) => (
-          <Link
-            href={`/Product/${data.name}`}
-            key={data.id}
-            legacyBehavior
-          >
-            <div className="my-[3%] hover:shadow-xl mx-auto cursor-pointer duration-100 hover:bg-gray-200 p-3 md:p-2 rounded-[10px]">
-              <Image
-                src={data.thumbnail}
-                alt={`${data.name} Image`}
-                className="w-[250px] mx-auto rounded-[10px]"
-                width={250} // Provide width for better performance
-                height={250} // Provide height for better performance
-              />
-              <div className="px-[3%] md:p-[1%] py-[5%]">
-                <p className="my-[1%] text-[20px] md:text-[12px]">{data.name}</p>
-                <div className="flex flex-row items-center justify-between">
-                  <p className="text-woodColor font-semibold text-[14px] md:text-[10px]">₹ {data.price}</p>
-                  <div className="text-yellow-500 flex flex-row items-center text-[12px] md:text-[10px]">
-                    {[...Array(parseInt(data.rating))].map((_, i) => (
-                      <StarIcon key={i} />
-                    ))}
-                  </div>
+          <Link href={`/Product/${data.name}`} key={data.id}>
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 w-[80%] lg:w-[100%] p-3 border">
+              <div className="relative w-full h-56 ">
+                <Image
+                  src={data.thumbnail}
+                  alt={`${data.name} Image`}
+                  className="w-full h-full object-cover rounded-t-2xl"
+                  layout="fill"
+                />
+                <div className="absolute top-4 right-4">
+                  <button className="bg-white p-2 rounded-full shadow-md">
+                    <CardIcon />
+                  </button>
+                </div>
+
+
+              </div>
+              <div className="p-1">
+                <p className=' text-gray-500 text-[14px]'>{data.category}</p>
+                <h3 className="text-lg font-semibold mb-2">{data.name}</h3>
+                <div className=" bottom-2 space-x-2 w-full flex flex-row items-center justify-between  text-[13px]">
+                  <button className="bg-black text-white py-[6px] px-4 rounded-full flex items-center space-x-2 w-[50%] lg:w-[100%] justify-between backdrop-blur-3xl backdrop-opacity-60">
+                    <span className=''>Buy now</span>
+                    <div className='bg-white rounded-full p-1 text-black'>
+                      <RightArrowIcon />
+                    </div>
+                  </button>
+                  <span className="lg:hidden font-bold text-black py-[6px] px-4 rounded-full">₹ {data.price}</span>
                 </div>
               </div>
             </div>

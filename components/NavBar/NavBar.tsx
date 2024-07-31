@@ -4,6 +4,8 @@ import { useState } from 'react';
 import NavItem from './NavItem';
 import { MenuIcon } from '../ReusableComponent/Icons';
 import MobileNav from './MobileNav';
+import Image from 'next/image';
+import Logo from "@/assets/Logo/we2win_white_logo.png"
 
 const NavBar = () => {
   const [isMobileNav, setIsMobileNav] = useState<boolean>(false);
@@ -15,8 +17,9 @@ const NavBar = () => {
     <div className="absolute w-full">
       <div className="relative w-full mx-auto z-50 text-white">
         <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl"></div>
-        <div className="relative flex flex-row items-center justify-between md:px-[5%] md:py-[3%]">
+        <div className="relative flex flex-row items-center justify-between md:px-[5%] ">
           <div className="cursor-pointer px-[2%] py-[1%]">
+            {/* <Image src={Logo} alt='logo' className='w-[20%]'/> */}
             <p>Logo</p>
           </div>
           <div className="flex flex-row justify-around w-[50%] md:hidden">

@@ -1,5 +1,6 @@
 'use client'
 
+import Bento from "@/components/Bento/Bento";
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Home/Hero";
 import { NavBar } from "@/components/NavBar";
@@ -11,7 +12,13 @@ export default function Home() {
     <div className="">
       <NavBar/>
       <Hero/>
+
+      <div className="py-6">
+      <p className="text-3xl md:text-2xl text-center mb-12">Top Sale Products</p>
       <ProductList/>
+      <ProductList/>
+      </div>
+      {/* <Bento/> */}
       <Footer/>
     </div>
   );

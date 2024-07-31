@@ -4,6 +4,7 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import ProductData from '@/components/ProductList/ProductData';
 import Image from 'next/image';
+import BreadCrumb from '@/components/ReusableComponent/BreadScrum'; // Corrected typo
 
 // Define the TypeScript interface for the Product
 interface Product {
@@ -26,7 +27,7 @@ const ProductPage: React.FC = () => {
   if (!name) {
     return (
       <div className="container mx-auto p-4">
-        <p>Product Not Found</p>
+        <p className="text-center text-xl text-red-500 font-semibold">Product Not Found</p>
       </div>
     );
   }
@@ -38,50 +39,45 @@ const ProductPage: React.FC = () => {
   if (!product) {
     return (
       <div className="container mx-auto p-4">
-        <p>Product Not Found</p>
+        <p className="text-center text-xl text-red-500 font-semibold">Product Not Found</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-      <div className="flex flex-col lg:flex-row">
-        <div className="lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full h-96 mb-4">
-            <Image 
-              src={product.thumbnail} 
-              alt={product.name} 
-              layout="fill" 
-              objectFit="contain" 
-              className="rounded-lg" 
+    <div className="container mx-auto p-3 lg:p-12 bg-white px-[5%] rounded-lg ">
+
+      <BreadCrumb />
+
+      <div className="flex flex-row items-center gap-5 w-[100%] ">
+
+        {/* Left Section - Images */}
+          <div className="relative w-[45%] h-80 lg:h-96 mb-4">
+            <Image
+              src={product.thumbnail}
+              alt={product.name}
+              className="rounded-lg shadow-md h-[80vh]"
             />
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-4">
-            {product.image.map((img, index) => (
-              <div key={index} className="relative w-24 h-24">
-                <Image 
-                  src={img} 
-                  alt={`${product.name} ${index + 1}`} 
-                  layout="fill" 
-                  objectFit="cover" 
-                  className="rounded-lg" 
-                />
-              </div>
-            ))}
+        {/* Right Section - Details */}
+        <div className="w-[45%] border text-center h-80 bg-gray-200 p-4">
+          <div className="mb-6">
+          <h1 className="text-3xl lg:text-4xl font-semibold mt-6 text-gray-700 mb-2">{product.name}</h1>
+            <p className="text-lg text-gray-700 mb-2"> {product.category}</p>
+            <p className="text-lg text-gray-700 mb-2"> {product.rating} ★</p>
+            <p className="text-xl text-gray-900 mb-4">₹ {product.price}</p>
           </div>
+          <div className="mb-6">
+            <p className="text-base text-gray-800 mb-4">{product.desc}</p>
+            <p className="text-base text-gray-800 mb-4">{product.aboutOne}</p>
+            <p className="text-base text-gray-800 mb-4">{product.aboutTwo}</p>
+          </div>
+          <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+            Buy Now
+          </button>
         </div>
 
-        <div className="lg:w-1/2 lg:pl-8">
-          <p className="text-xl mb-2"><strong>Category:</strong> {product.category}</p>
-          <p className="text-xl mb-2"><strong>Rating:</strong> {product.rating}</p>
-          <p className="text-xl mb-2"><strong>Price:</strong> ${product.price}</p>
-          <p className="text-lg mb-2"><strong>Description:</strong> {product.desc}</p>
-          <p className="text-lg mb-2"><strong>About:</strong> {product.aboutOne}</p>
-          <p className="text-lg mb-4">{product.aboutTwo}</p>
-          {/* Add more product details here as needed */}
-        </div>
       </div>
     </div>
   );

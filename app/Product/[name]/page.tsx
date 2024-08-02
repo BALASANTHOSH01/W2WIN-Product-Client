@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import ProductData from '@/components/ProductList/ProductData';
 import Image from 'next/image';
 import BreadCrumb from '@/components/ReusableComponent/BreadScrum'; // Corrected typo
+import { TagIcon } from '@/components/ReusableComponent/Icons';
 
 // Define the TypeScript interface for the Product
 interface Product {
@@ -52,18 +53,18 @@ const ProductPage: React.FC = () => {
       <div className="flex flex-row items-center gap-5 w-[100%] ">
 
         {/* Left Section - Images */}
-          <div className="relative w-[45%] h-80 lg:h-96 mb-4">
+          <div className="relative w-[40%] h-80 lg:h-96 mb-4">
             <Image
               src={product.thumbnail}
               alt={product.name}
-              className="rounded-lg shadow-md h-[80vh]"
+              className="rounded-lg shadow-md h-[70vh]"
             />
           </div>
 
         {/* Right Section - Details */}
-        <div className="w-[45%] border text-center h-80 bg-gray-200 p-4">
+        <div className="w-[45%] text-center h-80  p-4">
           <div className="mb-6">
-          <h1 className="text-3xl lg:text-4xl font-semibold mt-6 text-gray-700 mb-2">{product.name}</h1>
+          <h1 className="text-xl lg:text-2xl font-medium mt-6 text-gray-700 mb-2">{product.name}</h1>
             <p className="text-lg text-gray-700 mb-2"> {product.category}</p>
             <p className="text-lg text-gray-700 mb-2"> {product.rating} ★</p>
             <p className="text-xl text-gray-900 mb-4">₹ {product.price}</p>
@@ -72,6 +73,16 @@ const ProductPage: React.FC = () => {
             <p className="text-base text-gray-800 mb-4">{product.desc}</p>
             <p className="text-base text-gray-800 mb-4">{product.aboutOne}</p>
             <p className="text-base text-gray-800 mb-4">{product.aboutTwo}</p>
+          </div>
+
+          <div>
+            <p>Available Offers </p>
+
+            <div>
+              <TagIcon/>
+              <p></p>
+            </div>
+
           </div>
           <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
             Buy Now

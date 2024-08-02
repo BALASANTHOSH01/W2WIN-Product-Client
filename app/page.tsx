@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
-      <NavBar />
+
       <Hero />
 
       <div className="py-6">
@@ -19,7 +19,7 @@ export default function Home() {
         <ProductList />
       </div>
       {/* <Bento/> */}
-      <Footer />
+
     </div>
   );
 }

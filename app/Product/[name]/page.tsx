@@ -45,7 +45,7 @@ const ProductPage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto p-3 lg:p-12 bg-white px-[5%] rounded-lg ">
+    <div className="container mx-auto p-3 lg:p-12 bg-white px-[5%] rounded-lg h-screen">
 
       <BreadCrumb />
 

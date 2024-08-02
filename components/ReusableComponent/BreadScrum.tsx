@@ -1,17 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ArrowToRight } from './Icons';
 
 const BreadCrumb = () => {
   const pathname = usePathname();
   const pathArray = pathname.split('/').filter((path) => path);
 
   return (
-    <nav className=" py-3 px-5 rounded-lg text-[15px] my-[5px]">
+    <nav className=" py-3 px-5 rounded-lg text-[15px] mt-[5%]">
       <ol className="list-reset flex text-gray-800">
         <li>
           <Link href="/" legacyBehavior>
-            <a className="text-blue-500 hover:underline">Home</a>
+            <a className=" hover:underline">Home</a>
           </Link>
         </li>
         {pathArray.map((path, index) => {
@@ -21,12 +22,14 @@ const BreadCrumb = () => {
 
           return (
             <li key={index} className="flex items-center">
-              <span className="mx-2">/</span>
+              <span className="mx-2">
+                <ArrowToRight/>
+              </span>
               {isLast ? (
                 <span className="text-gray-500 capitalize">{displayName}</span>
               ) : (
                 <Link href={routePath} legacyBehavior>
-                  <a className="text-blue-500 hover:underline capitalize">{displayName}</a>
+                  <a className=" hover:underline capitalize">{displayName}</a>
                 </Link>
               )}
             </li>

@@ -45,7 +45,7 @@ const NavBar = () => {
 
                 <div className="flex flex-row justify-around w-[50%] md:hidden">
                   <NavItem isMobileNav={false} to="/Products" text="Buy Products" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/" text="Service" className="hover:text-woodColor" />
+                  <NavItem isMobileNav={false} to="/Services" text="Service" className="hover:text-woodColor" />
                   <NavItem isMobileNav={false} to="/About" text="About" className="hover:text-woodColor" />
                   <div className="bg-woodColor text-center flex items-center justify-center rounded-[25px]">
                     <NavItem isMobileNav={false} to="/" text="Contact" className="w-[100px]" />
@@ -73,7 +73,7 @@ const NavBar = () => {
 
                 <div className="flex flex-row justify-around w-[50%] md:hidden">
                   <NavItem isMobileNav={false} to="/Products" text="Buy Products" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/" text="Service" className="hover:text-woodColor" />
+                  <NavItem isMobileNav={false} to="/Services" text="Service" className="hover:text-woodColor" />
                   <NavItem isMobileNav={false} to="/About" text="About" className="hover:text-woodColor" />
                 </div>
 

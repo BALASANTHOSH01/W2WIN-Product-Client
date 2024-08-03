@@ -17,6 +17,7 @@ const config: Config = {
         'Manrope':['Manrope', 'sans-serif'],
       },
       colors:{
+        'lightwood':'#BC9F8B',
         'woodColor':'#80431e'
       },
       screens: {

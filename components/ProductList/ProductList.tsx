@@ -13,8 +13,8 @@ const ProductList: React.FC = () => {
      
       <div className="grid grid-cols-3 mx-auto lg:grid-cols-2  2xl:grid-cols-3 gap-4 px-5">
         {ProductData.map((data) => (
-          <Link href={`/Product/${data.name}`} key={data.id}>
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 w-[80%] lg:w-[100%] p-3 border">
+          <Link href={`/Product/${data.name}`} key={data.id} >
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 w-[80%] h-70 lg:w-[100%] p-3 border">
               <div className="relative w-full h-56 ">
                 <Image
                   src={data.thumbnail}

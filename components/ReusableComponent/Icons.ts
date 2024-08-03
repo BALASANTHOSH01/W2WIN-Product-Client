@@ -7,6 +7,8 @@ import { IoIosArrowForward as ArrowToRight } from "react-icons/io";
 import { RiHome2Fill as HomeIcon } from "react-icons/ri";
 import { FaArrowLeft as ArrowToLeft} from "react-icons/fa6";
 import { LuTags as TagIcon } from "react-icons/lu";
+import { MdOutlineAddShoppingCart as ShopCardIcon } from "react-icons/md";
+import { IoIosArrowDropdownCircle as DownArrowIcon } from "react-icons/io";
 
 
-export {MenuIcon,TagIcon,ExploreArrowIcon,CrossIcon,RightArrowIcon,CardIcon,ArrowToRight,HomeIcon,ArrowToLeft}
+export {MenuIcon,TagIcon,ExploreArrowIcon,CrossIcon,DownArrowIcon,ShopCardIcon,RightArrowIcon,CardIcon,ArrowToRight,HomeIcon,ArrowToLeft}

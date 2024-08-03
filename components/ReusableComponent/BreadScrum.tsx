@@ -8,7 +8,7 @@ const BreadCrumb = () => {
   const pathArray = pathname.split('/').filter((path) => path);
 
   return (
-    <nav className=" py-3 px-5 rounded-lg text-[15px] mt-[5%]">
+    <nav className=" py-3 px-5 rounded-lg text-[15px] ">
       <ol className="list-reset flex text-gray-800">
         <li>
           <Link href="/" legacyBehavior>

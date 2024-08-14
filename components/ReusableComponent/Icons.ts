@@ -10,5 +10,7 @@ import { LuTags as TagIcon } from "react-icons/lu";
 import { MdOutlineAddShoppingCart as ShopCardIcon } from "react-icons/md";
 import { IoIosArrowDropdownCircle as DownArrowIcon } from "react-icons/io";
 import { IoIosArrowDown as NavSectionArrowIcon} from "react-icons/io";
+import { IoIosHeartEmpty as EmptyHeartIcon } from "react-icons/io";
+import { IoMdHeart as FilledHeartIcon} from "react-icons/io";
 
-export {MenuIcon,TagIcon,ExploreArrowIcon,NavSectionArrowIcon,CrossIcon,DownArrowIcon,ShopCardIcon,RightArrowIcon,CardIcon,ArrowToRight,HomeIcon,ArrowToLeft}
+export {MenuIcon,TagIcon,ExploreArrowIcon,FilledHeartIcon,EmptyHeartIcon,NavSectionArrowIcon,CrossIcon,DownArrowIcon,ShopCardIcon,RightArrowIcon,CardIcon,ArrowToRight,HomeIcon,ArrowToLeft}

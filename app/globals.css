@@ -25,5 +25,5 @@
 body {
     scrollbar-width: thin; /* auto, thin, or none */
     scrollbar-color: #80431e #f1f1f1; /* thumb and track color */
-    overflow: hidden;
+    overflow-x: hidden;
 }

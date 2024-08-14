@@ -43,7 +43,7 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-[2%] bg-gray-200 px-[1%] ">
+    <div className="py-[2%] bg-gray-200 px-[1%] h-auto">
 
 
       <div className=" mt-[4px] bg-white rounded-[5px]">
@@ -56,7 +56,7 @@ const Products: React.FC = () => {
           </div>
         </div>
 
-        <div className=" flex flex-row items-start mb-[5%] h-screen">
+        <div className=" flex flex-row items-start mb-[5%]">
           <FilteringPanel />
           <ProductList products={products}/>
         </div>

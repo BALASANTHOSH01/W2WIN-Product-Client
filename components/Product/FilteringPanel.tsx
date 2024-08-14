@@ -13,7 +13,7 @@ const FilteringPanel = () => {
   };
 
   return (
-    <div className="w-[350px] px-[3%] space-y-6">
+    <div className="w-[350px] px-[3%] space-y-6 md:hidden">
       {/** This is category */}
       <div className="border-[1px] px-[3%] py-[4%] rounded-[5px] shadow-xl">
         <p className="font-semibold">Category</p>

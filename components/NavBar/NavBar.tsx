@@ -2,12 +2,13 @@
 
 import { useEffect, useLayoutEffect, useState } from 'react';
 import NavItem from './NavItem';
-import { MenuIcon } from '../ReusableComponent/Icons';
+import { MenuIcon, NavSectionArrowIcon } from '../ReusableComponent/Icons';
 import MobileNav from './MobileNav';
 import Image from 'next/image';
 import Logo from "@/assets/Logo/we2win_white_logo.png"
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+
 
 const NavBar = () => {
 
@@ -29,68 +30,79 @@ const NavBar = () => {
     setIsMobileNav(!isMobileNav);
   };
 
+  const [isProductHovered,setProductHovered]=useState(false);
+  useEffect(() => {
+    const handleClick = () => {
+      setProductHovered(false);
+    };
+
+    // Add event listener on component mount
+    document.addEventListener('click', handleClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
+
   return (
-    <div>
+    <div className='flex flex-row justify-between font-semibold items-center text-[18px] px-[3%] py-[1%] bg-white border-b w-screen overflow-hidden'>
+      
+      <div>
+        <p>Logo</p>
+      </div>
+
+      <div className=' flex flex-row w-[40%] items-center font-bold justify-around'>
+
+        <div className='flex flex-row items-center gap-2' onMouseEnter={()=>setProductHovered(true)}>
+        <NavItem text='Products' className='' to='' isMobileNav={isMobileNav} />
+        <NavSectionArrowIcon/>
+        </div>
+
+        <NavItem text='Service' className='' to='' isMobileNav={isMobileNav} />
+        <NavItem text='About' className='' to='' isMobileNav={isMobileNav} />
+      </div>
+
+      <div>
+      <NavItem text='Contact' className='w-[20%] text-start font-bold' to='' isMobileNav={isMobileNav} />
+      </div>
 
       {
-        isNavNeed ? (
-          <div className={`absolute w-full ${isNavNeed ? 'block' : 'hidden'}`}>
-            <div className="relative w-full mx-auto bg-white text-black z-50 border-b shadow-lg">
-              
-              <div className="relative flex flex-row items-center justify-between md:px-[5%] ">
+        isProductHovered  && (
+          <div className=' absolute top-[12%] font-normal text-ellipsis left-[35%] w-[400px] z-30 bg-white '>
+        <div className=' relative grid grid-cols-4 py-[2%] px-[3%]'>
+        <div>
+          <p>Chair</p>
+        </div>
+        <div>
+          <p>Door</p>
+        </div>
+        <div>
+          <p>Bed</p>
+        </div>
+        <div>
+          <p>Table</p>
+        </div>
+        <div>
+          <p>Table 1</p>
+        </div>
+        <div>
+          <p>Table 2</p>
+        </div>
 
-                <Link href={"/"} className="cursor-pointer px-[2%] md:py-[2.5%] py-[1%]">
-                  {/* <Image src={Logo} alt='logo' className='w-[20%]'/> */}
-                  <p>Logo</p>
-                </Link>
+        <div className=' absolute right-[1%] bottom-[2%] '>
+          <p>CustomeOrder</p>
+        </div>
+        </div>
 
-                <div className="flex flex-row justify-around w-[50%] md:hidden">
-                  <NavItem isMobileNav={false} to="/Products" text="Buy Products" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/Services" text="Service" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/About" text="About" className="hover:text-woodColor" />
-                  <div className="bg-woodColor text-center text-white flex items-center justify-center rounded-[25px]">
-                    <NavItem isMobileNav={false} to="/" text="Contact" className="w-[100px]" />
-                  </div>
-                </div>
 
-                <div className="text-[24px] font-semibold cursor-pointer md:block hidden" onClick={handleMobileNav}>
-                  <MenuIcon />
-                </div>
-                {isMobileNav && <MobileNav handleMobileNav={handleMobileNav} />}
-
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className={`absolute w-full ${isNavNeed ? 'hidden' : 'block'}`}>
-            <div className="relative w-full mx-auto z-50 text-white bg-gray-400">
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl"></div>
-              <div className="relative flex flex-row items-center justify-between md:px-[5%] ">
-
-                <div className="cursor-pointer px-[2%] py-[1%]">
-                  {/* <Image src={Logo} alt='logo' className='w-[20%]'/> */}
-                  <p>Logo</p>
-                </div>
-
-                <div className="flex flex-row justify-around w-[50%] md:hidden">
-                  <NavItem isMobileNav={false} to="/Products" text="Buy Products" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/Services" text="Service" className="hover:text-woodColor" />
-                  <NavItem isMobileNav={false} to="/About" text="About" className="hover:text-woodColor" />
-                </div>
-
-                <div className="text-[24px] font-semibold cursor-pointer md:block hidden" onClick={handleMobileNav}>
-                  <MenuIcon />
-                </div>
-                {isMobileNav && <MobileNav handleMobileNav={handleMobileNav} />}
-                
-              </div>
-            </div>
-          </div>
+      </div>
         )
       }
     </div>
 
-  );
+  )
 };
 
 export default NavBar;

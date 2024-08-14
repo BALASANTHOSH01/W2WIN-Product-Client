@@ -6,16 +6,17 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-woodColor text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-[10%] md:px-8 lg:px-10 xl:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-start space-y-8 md:space-y-0 md:space-x-8">
+        <div className="flex flex-row md:flex-row justify-between items-start md:items-start space-y-8 md:space-y-0 md:space-x-8">
           {/* Company Info */}
           <div className="md:w-1/3">
             <h2 className="text-3xl font-bold mb-4">We2Win</h2>
-            <p className="text-gray-400 mb-2">6th St, Vinayagapuram, Coimbatore, Tamil Nadu 641035</p>
-            <p className="text-gray-400 mb-2">Phone: 9659608491, 9952839684</p>
-            <p className="text-gray-400">Email: contact@we2win.com</p>
+            <p className=" mb-2">6th St, Vinayagapuram, Coimbatore, Tamil Nadu 641035</p>
+            <p className=" mb-2">Phone: 9659608491, 9952839684</p>
+            <p className="">Email: contact@we2win.com</p>
           </div>
+          
           {/* Navigation Links */}
           <div className="md:w-1/3 flex flex-col md:flex-row md:justify-center md:items-center">
             <div className="flex flex-col md:mr-8 text-white">
@@ -33,8 +34,9 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+
           {/* Social Media Links */}
-          <div className="md:w-1/3 flex justify-start md:justify-end space-x-4">
+          <div className="md:w-1/3 flex flex-col items-center gap-5 md:justify-end space-x-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
               <FaFacebookF size={20} />
             </a>

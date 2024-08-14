@@ -10,7 +10,7 @@ interface NavItemPropType {
   isMobileNav?: boolean;
 }
 
-const NavItem = ({ text, className = '', to, isMobileNav = false }: NavItemPropType) => {
+const NavItem = ({ text, className = '', to, isMobileNav  }: NavItemPropType) => {
   return (
     <Link href={to} legacyBehavior>
       <a
